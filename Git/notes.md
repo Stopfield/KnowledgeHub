@@ -1,24 +1,20 @@
-# Como retornar para um commit antigo?
-É simples! É só usar o comando "git reset"!
-Mas cuidado! Existem algumas maneiras de fazer esse reset,
-dependendo do nível de confusão do código! Estas são elas:
+# How do I return to an old commit?
+It's simple! You just use the `git reset [commit hash] --[hard | soft | mixed]` command!
+But beware! There are ways to execute this reset, each varying from the levels of code fog! Take a look at them:
 
-1. soft: Reseta tudo, mas deixa os arquivos futuros em **STAGED**;
-2. mixed: Reseta tudo, mas deixa os arquivos futuros em **UNTRACKED**;
-3. hard: Reseta TUDO, deleta TUDO! Quando o nível de caos do código chegou ao máximo;
+1. `soft`: Resets, but puts the files from post commits in the **STAGED** state;
+2. `mixed`: Resets, but puts the files from post commits as **UNTRACKED**;
+3. `hard`: Resets Everythin! It deletes everything from post commits! Only when the code is terrible;
 
-Tô testando os três modos.
+I tested it all.
 
-# Comandos úteis importantes
-Alguns comandos que podem me salvar no trabalho!
+# Useful commands
+Some commands that can help me not lose a bunch of time!
 
-1. git fetch: Pega as alterações feitas no branch remoto! É diferente do git pull que pega e faz um merge
-com o nosso branch;
-2. git stash: Tá ocupado resolvendo um problema numa branch e um bug apareceu em outro? O git stash salva todas as alterações
-feitas na branch atual **SEM COMMITTAR**. Isso te deixa livre para ir para outra branch!
+1. `git fetch`: Fetches future alterations made in the `remote` branch and creates a local branch representing it! It differs from `git pull`, which fetches and merges this branch;
+2. `git stash`: Are you occupied solving a problem in a branch, but a bug appeared from another one? This command saves all alterations made to the current branch **WITHOUT COMMITTING**. This save your unfinished work for you!
 
-## Sobre o git stash
-Existem dois modos de usar o **stash**. O **APPLY** e o **POP**. O primeiro
-aplica as alterações no branch atual e ainda as deixa guardadas. No segundo,
-as alterações saem do stash e são aplicadas. Podemos criar um stash em uma
-determinada branch **X** e usar em outra branch **Y**!
+## About `git stash`
+There are two ways to **stash**: **APPLY** and  **POP**. The latter *applyes* the alterations stashed in your current branch, but mantains the content stashed. The former, your alterations are aplied in the current branch, but it's deleted from the stash. 
+
+> We can create a stash in a branch named *X* and use it in another branch named *Y*!
